@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_triple_line_24"
+        android:title="menu"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/maps"
+                android:title="@string/maps" />
+            <item
+                android:id="@+id/localization"
+                android:title="@string/language" />
+            <item
+                android:id="@+id/logout"
+                android:title="@string/logout" />
+        </menu>
+    </item>
+
+
+</menu>

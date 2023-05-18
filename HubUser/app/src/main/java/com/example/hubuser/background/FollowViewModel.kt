@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.hubuser.R
 import com.example.hubuser.response.DetailUserResponse
 import com.example.hubuser.response.ItemsItem
 import com.example.hubuser.retrofit.ApiConfig
@@ -28,6 +29,9 @@ class FollowViewModel(private val context: Context) : ViewModel() {
     private val _detailUser = MutableLiveData<DetailUserResponse>()
     val detailUser: MutableLiveData<DetailUserResponse> = _detailUser
 
+    //yg diliat observer kan object live datanya yg di view model, kalau user preference diganti bukan dri fungsi view model, object live datanya kan ga ikut keganti
+    //konsep view model dan observer itu mengandalkan fungsi di viewmodel untuk diundang terus,
+    // jadi tidak benar" realtime, tp itu akan refresh kalau ada fungsi yg merujuk ke unit yg diobserve melakukan perubahan
     fun findFollowers(username:String) {
         _isLoading.value = true
         val client = ApiConfig.getApiService().getFollowers(username)
@@ -47,7 +51,7 @@ class FollowViewModel(private val context: Context) : ViewModel() {
             override fun onFailure(call: Call<ArrayList<ItemsItem>>, t: Throwable) {
                 _isLoading.value = false
                 Log.e(SearchUserFragment.TAG, "onFailure: ${t.message}")
-                Toast.makeText(context,"Network Error",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,context.getString(R.string.no_con),Toast.LENGTH_SHORT).show()
             }
         })
     }

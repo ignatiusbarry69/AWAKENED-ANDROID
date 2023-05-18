@@ -34,6 +34,10 @@ class FavoriteFragment : Fragment() {
             if(it!=null){
                 binding.tvNoFavorite.visibility = View.GONE
                 val items = arrayListOf<ItemsItem>()
+
+                //yg return getfavorit itu langsung live data, dan itu bntuknya list<Favuser>
+                //walaupun bntuknya beda tp isi strukturnya sma dgn response dr githubresponse dgn arraylist<itemsitem>
+                //makanya ini di map biar bisa make adapter yg sama, sbenernya bisa aja dibikinin baru
                 it.map {
                     val item = ItemsItem(id = it.id.toInt(), login = it.username.toString(), avatarUrl = it.avatarUrl.toString())
                     items.add(item)

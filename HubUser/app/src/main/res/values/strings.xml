@@ -14,7 +14,7 @@
     <string name="iv_card">image for cardview</string>
     <string name="iv_detail">image for detail</string>
     <string name="powered">Powered by Dicoding</string>
-
+    <string name="no_con">Network Error</string>
 
 
 </resources>
