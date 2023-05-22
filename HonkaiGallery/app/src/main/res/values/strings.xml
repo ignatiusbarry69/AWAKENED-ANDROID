@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">HonkaiGallery</string>
+    <string name="bailu">Bailu</string>
+    <string name="danheng">Dan Heng</string>
+    <string name="seele">Seele</string>
+    <string name="tingyun">Tingyun</string>
+    <string name="march">March7th</string>
+    <string name="natasha">Natasha</string>
+    <string name="serval">Serval</string>
+    <string name="sampo">Sampo</string>
+    <string name="bronya">Bronya</string>
+    <string name="gepard">Gepard</string>
+    <string name="placeholder_search">Search for character...</string>
+    <string name="tes">Bailu</string>
+    <string name="search_character">Search for characters..</string>
+    <string name="title_activity_detail_character">DetailCharacterActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+
+
+</resources>
