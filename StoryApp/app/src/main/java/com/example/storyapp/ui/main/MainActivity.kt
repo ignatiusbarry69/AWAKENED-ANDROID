@@ -71,8 +71,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-
-
     }
 
     private fun refreshApp() {

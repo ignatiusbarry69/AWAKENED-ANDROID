@@ -166,7 +166,7 @@ class StoryAppRepository private constructor(
                     result.value = Result.Error("error")
                 }
             })
-        return result
+            return result
     }
 
     companion object {

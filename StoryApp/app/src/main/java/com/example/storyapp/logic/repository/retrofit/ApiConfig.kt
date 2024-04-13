@@ -10,11 +10,15 @@ object ApiConfig {
     private const val base_url = "https://story-api.dicoding.dev/"
 
     fun getApiService(): ApiService {
-        val loggingInterceptor = if (BuildConfig.DEBUG) {
+//        val loggingInterceptor = if (BuildConfig.DEBUG) {
+//            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+//        } else {
+//            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
+//        }
+
+        val loggingInterceptor =
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-        } else {
-            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
-        }
+
 
         val client = OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)

@@ -1,6 +1,7 @@
 package com.example.storyapp.logic.repository.preference
 
 import android.content.Context
+import android.preference.PreferenceManager
 
 class UserPreference(context: Context) {
     companion object{

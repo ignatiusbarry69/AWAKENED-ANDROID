@@ -82,7 +82,6 @@ class AddStoryActivity : AppCompatActivity() {
             )
         }
 
-        //this on is new
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         setupViewModel()
@@ -93,24 +92,24 @@ class AddStoryActivity : AppCompatActivity() {
     }
 
 
-    private val requestPermissionLauncher =
-        registerForActivityResult(
-            ActivityResultContracts.RequestMultiplePermissions()
-        ) { permissions ->
-            when {
-                permissions[Manifest.permission.ACCESS_FINE_LOCATION] ?: false -> {
-                    // Precise location access granted.
-                    getMyLastLocation()
-                }
-                permissions[Manifest.permission.ACCESS_COARSE_LOCATION] ?: false -> {
-                    // Only approximate location access granted.
-                    getMyLastLocation()
-                }
-                else -> {
-                    // No location access granted.
+        private val requestPermissionLauncher =
+            registerForActivityResult(
+                ActivityResultContracts.RequestMultiplePermissions()
+            ) { permissions ->
+                when {
+                    permissions[Manifest.permission.ACCESS_FINE_LOCATION] ?: false -> {
+                        // Precise location access granted.
+                        getMyLastLocation()
+                    }
+                    permissions[Manifest.permission.ACCESS_COARSE_LOCATION] ?: false -> {
+                        // Only approximate location access granted.
+                        getMyLastLocation()
+                    }
+                    else -> {
+                        // No location access granted.
+                    }
                 }
             }
-        }
 
     private fun checkPermission(permission: String): Boolean {
         return ContextCompat.checkSelfPermission(
@@ -144,7 +143,6 @@ class AddStoryActivity : AppCompatActivity() {
     private fun setupViewModel() {
         val factory: ViewModelFactory = ViewModelFactory.getInstance(applicationContext)
         addStoryViewModel = ViewModelProvider(this, factory)[AddStoryViewModel::class.java]
-
         addStoryViewModel.getUser().observe(this) { user ->
             this.user = user
         }
