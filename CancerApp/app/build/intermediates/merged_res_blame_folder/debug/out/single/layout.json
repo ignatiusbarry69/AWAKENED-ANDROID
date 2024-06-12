@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.dicoding.asclepius.app-mergeDebugResources-30:/layout/activity_result.xml",
+        "source": "com.dicoding.asclepius.app-main-33:/layout/activity_result.xml"
+    },
+    {
+        "merged": "com.dicoding.asclepius.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "com.dicoding.asclepius.app-main-33:/layout/activity_main.xml"
+    }
+]
